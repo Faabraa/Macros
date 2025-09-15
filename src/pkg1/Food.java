@@ -2,6 +2,11 @@ package pkg1;
 
 import java.util.Scanner;
 
+/**
+ * The Food class represents a food item with its name and main macronutrients.
+ * It stores calories, fat, carbohydrates, and protein, and provides methods
+ * to access, modify, and display this nutritional information.
+ */
 public class Food {
     private String name;
     private int calories;
@@ -9,6 +14,14 @@ public class Food {
     private int carbohydrates;
     private int protein;
 
+    /**
+     * Constructor with name and macronutrients
+     * @param name
+     * @param calories
+     * @param fat
+     * @param carbohydrates
+     * @param protein
+     */
     public Food(String name,int calories, int fat, int carbohydrates, int protein) {
         this.name = name;
         this.calories = calories;
@@ -16,7 +29,7 @@ public class Food {
         this.carbohydrates = carbohydrates;
         this.protein = protein;
     }
-
+    // Getters and setters
     public String getName() {
         return name;
     }
@@ -57,11 +70,15 @@ public class Food {
         this.protein = protein;
     }
 
+    /**
+     * Displays the food's nutritional information (macronutrients and calories)
+     * in a user-friendly format.
+     */
     public void showFood() {
-        System.out.println("name= "+ name +
-                " \ncalories= " + calories +
-                ", fat= " + fat +
-                ", carbohydrates= " + carbohydrates +
-                ", protein= " + protein );
+        System.out.println("** "+ name + " **" +
+                "\nCalories = " + calories +
+                "\nFat = " + fat +
+                "\nCarbohydrates = " + carbohydrates +
+                "\nProtein = " + protein );
     }
 }

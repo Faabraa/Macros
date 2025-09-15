@@ -2,22 +2,37 @@ package pkg1;
 
 import java.util.Scanner;
 
+/**
+ * Provides methods to manage Food and Recipe objects,
+ * including creating new Food instances from user input
+ */
 public class methodsFoodRecipe {
-    public methodsFoodRecipe() {
+    private Scanner sc;
+
+    /**
+     * Constructor with Scanner
+     * @param sc Scanner object used for reading user input
+     */
+    public methodsFoodRecipe(Scanner sc) {
+        this.sc = sc;
     }
 
-    public Food addFood()   {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Type food name");
+    /**
+     * Reads food information from the user and creates a Food object
+     * @return a new Food instance with the provided data
+     */
+    public Food addFood() {
+        System.out.print("Enter food name: ");
         String name = sc.nextLine();
-        System.out.println("Type calories for 100g");
+        System.out.print("Enter calories for 100g: ");
         int calories = sc.nextInt();
-        System.out.println("Type fat for 100g");
+        System.out.print("Enter fat for 100g: ");
         int fat = sc.nextInt();
-        System.out.println("Type carbohydrates for 100g");
+        System.out.print("Enter carbohydrates for 100g: ");
         int carbs = sc.nextInt();
-        System.out.println("Type protein for 100g");
+        System.out.print("Enter protein for 100g: ");
         int protein = sc.nextInt();
-        return new Food(name,calories,fat,carbs,protein);
+        sc.nextLine();
+        return new Food(name, calories, fat, carbs, protein);
     }
 }
