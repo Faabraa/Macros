@@ -1,13 +1,17 @@
 import pkg1.Food;
+import pkg1.Recipes;
 import pkg1.methodsFoodRecipe;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int option = 0;
-        Food f = null;
+        List<Food> foods = new ArrayList<>();
+        List<Recipes> recipes = new ArrayList<>();
         // Main loop
         while (option != 2) {
             System.out.println("1. Food and Recipes " +
@@ -24,13 +28,36 @@ public class Main {
                     methodsFoodRecipe mt = new methodsFoodRecipe(sc);
                     switch (option1) {
                         case 1:
-                            f = mt.addFood();
+                            Food newFood = mt.addFood();
+                            foods.add(newFood);
                             break;
                         case 2:
-                            if (f == null) {
+                            if (foods.isEmpty()) {
                                 System.out.println("There is no food to show");
                             } else {
-                                f.showFood();
+                                for (Food food : foods) {
+                                    food.showFood();
+                                    System.out.println("-------------------");
+                                }
+                            }
+                            break;
+                        case 3:
+                            sc.nextLine();
+                            System.out.println("Enter recipe name: ");
+                            String recipeName = sc.nextLine();
+                            Recipes recipe = new Recipes(recipeName);
+                            recipe.addRecipe(foods, sc);
+                            recipes.add(recipe);
+                            break;
+                        case 4:
+                            if (recipes.isEmpty()) {
+                                System.out.println("There is no recipes to show");
+                            } else {
+                                for (Recipes recip : recipes) {
+                                    recip.showRecipe();
+                                    System.out.println("-------------------");
+                                }
+
                             }
                             break;
                     }

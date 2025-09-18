@@ -1,7 +1,5 @@
 package pkg1;
 
-import java.util.Scanner;
-
 /**
  * The Food class represents a food item with its name and main macronutrients.
  * It stores calories, fat, carbohydrates, and protein, and provides methods

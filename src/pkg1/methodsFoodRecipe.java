@@ -22,6 +22,7 @@ public class methodsFoodRecipe {
      * @return a new Food instance with the provided data
      */
     public Food addFood() {
+        sc.nextLine();
         System.out.print("Enter food name: ");
         String name = sc.nextLine();
         System.out.print("Enter calories for 100g: ");
